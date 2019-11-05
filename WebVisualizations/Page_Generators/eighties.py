@@ -42,7 +42,7 @@ tens = not_nineties.loc[not_nineties["draft_year"] >= 2010, :]
 pre_merger = nba_df.loc[nba_df["draft_year"] < 1976, :]
 
 
-fig = px.scatter(eighties, x=eighties['career_WS'], y=eighties['career_earnings'], hover_data=['name', 'draft_year'], height=400, trendline=True)
+fig = px.scatter(eighties, x=eighties['career_WS'], y=eighties['career_earnings'], hover_data=['name', 'draft_year'], height=500, trendline=True)
 
 (slope, intercept, _, _, _) = linregress(eighties['career_WS'], eighties['career_earnings'])
 fit = slope * eighties['career_WS'] + intercept
@@ -53,7 +53,7 @@ fig.add_trace(
 ))
 
 fig.update_layout(
-    title="Wins Shares by Salary (Drafted 1976-1989)",
+    title="Win Shares by Salary (Drafted 1976-1989)",
     xaxis_title="Career Win Shares",
     yaxis_title="Career Earnings ($)",
     font=dict(
